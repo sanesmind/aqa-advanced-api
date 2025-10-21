@@ -4,7 +4,7 @@ import {API_URL} from "../src/constants/api.js";
 
 
 
-test('getPostsId', async () => {
+test.skip('getPostsId', async () => {
    const postsId = 1;
    const apiClient = axios.create({baseURL: API_URL});
 

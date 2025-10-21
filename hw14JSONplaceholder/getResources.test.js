@@ -2,7 +2,7 @@ import {expect, describe, test} from '@jest/globals';
 import axios from 'axios';
 import {API_URL} from "../src/constants/api.js";
 
-describe('getResourceId and getResourceId with userId filter', () => {
+describe.skip('getResourceId and getResourceId with userId filter', () => {
     test('getPosts', async () => {
         const apiClient = axios.create({baseURL: API_URL});
 

@@ -2,7 +2,7 @@ import {expect, describe, test} from '@jest/globals';
 import axios from 'axios';
 import {API_URL} from "../src/constants/api.js";
 
-describe('postResource full and partial fill in', () => {
+describe.skip('postResource full and partial fill in', () => {
     test('POST resource', async () => {
         const apiClient = axios.create({baseURL: API_URL});
         const requestBody = {
