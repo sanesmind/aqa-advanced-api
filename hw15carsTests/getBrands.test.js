@@ -5,6 +5,7 @@ import axios from "axios";
 import {QA_AUTO_API_URL} from "../src/constants/api.js";
 import AuthController from "../src/controllers/AuthController.js";
 import CarsController from "../src/controllers/CarsController.js";
+import randomUserData from "../src/functions/randomUserData.js";
 
 
 describe("Get brands", () => {
@@ -22,7 +23,7 @@ describe("Get brands", () => {
     //console.log(userData);
 
     beforeEach(async () => {
-        const userData = authController.randomUserData();
+        const userData = randomUserData();
         const signUpResponse = await authController.signUp(userData);
         expect(signUpResponse.status).toBe(201);
 

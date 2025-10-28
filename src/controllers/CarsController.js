@@ -1,5 +1,4 @@
 import BaseController from "./BaseController.js";
-import {th} from "@faker-js/faker";
 
 
 export default class CarsController extends BaseController {

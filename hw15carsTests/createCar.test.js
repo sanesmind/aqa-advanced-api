@@ -7,6 +7,7 @@ import {QA_AUTO_API_URL} from "../src/constants/api.js";
 import {CookieJar} from "tough-cookie";
 import axios from "axios";
 import {wrapper} from "axios-cookiejar-support";
+import randomUserData from "../src/functions/randomUserData.js";
 
 
 describe("Create Car", () => {
@@ -20,11 +21,10 @@ describe("Create Car", () => {
     const authController = new AuthController(client)
     const carsController = new CarsController(client)
 
-
     //console.log(userData);
 
     beforeEach(async () => {
-        const userData = authController.randomUserData();
+        const userData = randomUserData();
         const signUpResponse = await authController.signUp(userData);
         expect(signUpResponse.status).toBe(201);
 

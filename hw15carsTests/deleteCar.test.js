@@ -6,6 +6,7 @@ import {QA_AUTO_API_URL} from "../src/constants/api.js";
 import {CookieJar} from "tough-cookie";
 import axios from "axios";
 import {wrapper} from "axios-cookiejar-support";
+import randomUserData from "../src/functions/randomUserData.js";
 
 describe("Delete a Car", () => {
     const jar = new CookieJar();
@@ -22,7 +23,7 @@ describe("Delete a Car", () => {
     //console.log(userData);
 
     beforeEach(async () => {
-        const userData = authController.randomUserData();
+        const userData = randomUserData();
         const signUpResponse = await authController.signUp(userData);
         expect(signUpResponse.status).toBe(201);
         //console.log(signUpResponse.error);
@@ -50,7 +51,7 @@ describe("Delete a Car", () => {
             mileage: faker.number.int({min: 0, max: 300_000})
         }
 
-        const beforeCarCreatedTime = new Date();
+        //const beforeCarCreatedTime = new Date();
         //console.log(beforeCarCreatedTime);
 
         const response = await carsController.createCar(requestBody);
@@ -101,7 +102,7 @@ describe("Delete a Car", () => {
             mileage: faker.number.int({min: 0, max: 300_000})
         }
 
-        const beforeCarCreatedTime = new Date();
+        //const beforeCarCreatedTime = new Date();
         //console.log(beforeCarCreatedTime);
 
         const response = await carsController.createCar(requestBody);

@@ -6,6 +6,7 @@ import {QA_AUTO_API_URL} from "../src/constants/api.js";
 import AuthController from "../src/controllers/AuthController.js";
 import CarsController from "../src/controllers/CarsController.js";
 import { faker } from '@faker-js/faker';
+import randomUserData from "../src/functions/randomUserData.js";
 
 describe.only("Get model", () => {
     const jar = new CookieJar();
@@ -22,7 +23,7 @@ describe.only("Get model", () => {
     //console.log(userData);
 
     beforeEach(async () => {
-        const userData = authController.randomUserData();
+        const userData = randomUserData();
         const signUpResponse = await authController.signUp(userData);
         expect(signUpResponse.status).toBe(201);
 
